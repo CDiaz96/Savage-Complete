@@ -1,3 +1,5 @@
+var port     = process.env.PORT || 3000;
+
 //Go into nodemodules and use express
 const express = require('express')
 //app is the express function
@@ -13,7 +15,7 @@ const url = "mongodb+srv://CarolinD:Carolin23!@cluster0.v6hrh.mongodb.net/demo?r
 const dbName = "demo";
 
 //creates server and connects it your database
-app.listen(3000, () => {
+app.listen(PORT, () => {
     MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (error, client) => {
         if(error) {
             throw error;
